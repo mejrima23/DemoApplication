@@ -1,44 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20210408 11:47:13.427" generator="Robot 3.2.2 (Python 2.7.18 on win32)">
-<suite source="C:\Users\User\IdeaProjects\DemoApplication\Tests\order_payment.robot" id="s1" name="Order Payment">
-<kw type="setup" name="Open Browser" library="order_payment">
+<robot rpa="false" generated="20210408 21:08:32.371" generator="Robot 3.2.2 (Python 2.7.18 on win32)">
+<suite source="C:\AtlantDemo\DemoApplication\Tests\user_registration.robot" id="s1" name="User Registration">
+<kw type="setup" name="Open Browser to registration page" library="user_registration">
 <doc>Opens browser to login page</doc>
-<kw name="Open Browser" library="order_payment">
-<doc>Opens browser to login page</doc>
+<kw name="Open Browser" library="ExtendedSelenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
 <arguments>
 <arg>${URL}</arg>
 <arg>browser=${BROWSER}</arg>
 </arguments>
-<msg timestamp="20210408 11:47:13.712" level="FAIL">Keyword 'order_payment.Open Browser' expected 0 arguments, got 2.</msg>
-<status status="FAIL" endtime="20210408 11:47:13.712" starttime="20210408 11:47:13.712"></status>
+<msg timestamp="20210408 21:08:32.677" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php?controller=authentication&amp;back=my-account'</msg>
+<status status="PASS" endtime="20210408 21:08:46.600" starttime="20210408 21:08:32.675"></status>
 </kw>
-<status status="FAIL" endtime="20210408 11:47:13.712" starttime="20210408 11:47:13.712"></status>
+<status status="PASS" endtime="20210408 21:08:46.600" starttime="20210408 21:08:32.675"></status>
 </kw>
-<test id="s1-t1" name="Verify ordering and payment method">
-<doc>order</doc>
+<test id="s1-t1" name="Verify user registration">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+</arguments>
+<assign>
+<var>${RANDOM}</var>
+</assign>
+<msg timestamp="20210408 21:08:46.603" level="INFO">${RANDOM} = jgykhsvc</msg>
+<status status="PASS" endtime="20210408 21:08:46.603" starttime="20210408 21:08:46.603"></status>
+</kw>
+<kw name="Generate random Email:" library="user_registration">
+<doc>Generates random Email</doc>
+<arguments>
+<arg>${RANDOM}@gmail.com</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${IN_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:46.606" level="INFO">Typing text 'jgykhsvc@gmail.com' into text field 'id=email_create'</msg>
+<status status="PASS" endtime="20210408 21:08:46.869" starttime="20210408 21:08:46.604"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${CREATE_BTN}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:46.870" level="INFO">Clicking element 'id=SubmitCreate'.</msg>
+<status status="PASS" endtime="20210408 21:08:47.526" starttime="20210408 21:08:46.870"></status>
+</kw>
+<status status="PASS" endtime="20210408 21:08:47.527" starttime="20210408 21:08:46.604"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+</arguments>
+<assign>
+<var>${RANDOM}</var>
+</assign>
+<msg timestamp="20210408 21:08:47.528" level="INFO">${RANDOM} = abfetowc</msg>
+<status status="PASS" endtime="20210408 21:08:47.528" starttime="20210408 21:08:47.527"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${FIRSTNAME}</var>
+</assign>
+<msg timestamp="20210408 21:08:47.528" level="INFO">${FIRSTNAME} = qHHqjSVc</msg>
+<status status="PASS" endtime="20210408 21:08:47.529" starttime="20210408 21:08:47.528"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>8</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${LASTNAME}</var>
+</assign>
+<msg timestamp="20210408 21:08:47.529" level="INFO">${LASTNAME} = KoXsJtUv</msg>
+<status status="PASS" endtime="20210408 21:08:47.530" starttime="20210408 21:08:47.529"></status>
+</kw>
+<kw name="Input firstname and lastname:" library="user_registration">
+<arguments>
+<arg>${FIRSTNAME}</arg>
+<arg>${LASTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${IN_FIRSTNAME}</arg>
+<arg>${FIRSTNAME}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:47.531" level="INFO">Typing text 'qHHqjSVc' into text field 'id=customer_firstname'</msg>
+<status status="PASS" endtime="20210408 21:08:49.227" starttime="20210408 21:08:47.531"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${IN_LASTNAME}</arg>
+<arg>${LASTNAME}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:49.227" level="INFO">Typing text 'KoXsJtUv' into text field 'id=customer_lastname'</msg>
+<status status="PASS" endtime="20210408 21:08:49.450" starttime="20210408 21:08:49.227"></status>
+</kw>
+<status status="PASS" endtime="20210408 21:08:49.450" starttime="20210408 21:08:47.530"></status>
+</kw>
+<kw name="Input password:" library="user_registration">
+<arguments>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${IN_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:49.451" level="INFO">Typing text 'mystore1234' into text field 'id=passwd'</msg>
+<status status="PASS" endtime="20210408 21:08:49.765" starttime="20210408 21:08:49.451"></status>
+</kw>
+<status status="PASS" endtime="20210408 21:08:49.765" starttime="20210408 21:08:49.450"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>random.choice(@{STATE_LIST})</arg>
+</arguments>
+<assign>
+<var>${STATE}</var>
+</assign>
+<msg timestamp="20210408 21:08:49.768" level="INFO">${STATE} = Oregon</msg>
+<status status="PASS" endtime="20210408 21:08:49.768" starttime="20210408 21:08:49.767"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>5</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${CODE}</var>
+</assign>
+<msg timestamp="20210408 21:08:49.769" level="INFO">${CODE} = 28598</msg>
+<status status="PASS" endtime="20210408 21:08:49.769" starttime="20210408 21:08:49.768"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>9</arg>
+<arg>[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${PHONE}</var>
+</assign>
+<msg timestamp="20210408 21:08:49.771" level="INFO">${PHONE} = 589089924</msg>
+<status status="PASS" endtime="20210408 21:08:49.772" starttime="20210408 21:08:49.770"></status>
+</kw>
+<kw name="Set address:" library="user_registration">
+<arguments>
+<arg>Trg</arg>
+<arg>Sarajevo</arg>
+<arg>${STATE}</arg>
+<arg>${CODE}</arg>
+<arg>${PHONE}</arg>
+</arguments>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${IN_ADDRESS}</arg>
+<arg>${ADDRESS}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:49.775" level="INFO">Typing text 'Trg' into text field 'id=address1'</msg>
+<status status="PASS" endtime="20210408 21:08:49.995" starttime="20210408 21:08:49.774"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${IN_CITY}</arg>
+<arg>${CITY}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:49.995" level="INFO">Typing text 'Sarajevo' into text field 'id=city'</msg>
+<status status="PASS" endtime="20210408 21:08:50.214" starttime="20210408 21:08:49.995"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${IN_STATE}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:50.215" level="INFO">Clicking element 'id=id_state'.</msg>
+<status status="PASS" endtime="20210408 21:08:50.890" starttime="20210408 21:08:50.215"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="id_state"]//option[text()="${STATE}"]</arg>
+</arguments>
+<msg timestamp="20210408 21:08:50.891" level="INFO">Clicking element '//*[@id="id_state"]//option[text()="Oregon"]'.</msg>
+<status status="PASS" endtime="20210408 21:08:51.537" starttime="20210408 21:08:50.890"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${IN_CODE}</arg>
+<arg>${CODE}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:51.538" level="INFO">Typing text '28598' into text field 'id=postcode'</msg>
+<status status="PASS" endtime="20210408 21:08:55.397" starttime="20210408 21:08:51.537"></status>
+</kw>
+<kw name="Input Text" library="ExtendedSelenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${IN_PHONE}</arg>
+<arg>${PHONE}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:55.399" level="INFO">Typing text '589089924' into text field 'id=phone_mobile'</msg>
+<status status="PASS" endtime="20210408 21:08:55.927" starttime="20210408 21:08:55.398"></status>
+</kw>
+<kw name="Click Element" library="ExtendedSelenium2Library">
+<doc>Clicks an element identified by ``locator``.</doc>
+<arguments>
+<arg>${REGISTER_BTN}</arg>
+</arguments>
+<msg timestamp="20210408 21:08:55.928" level="INFO">Clicking element 'id=submitAccount'.</msg>
+<status status="PASS" endtime="20210408 21:09:00.711" starttime="20210408 21:08:55.927"></status>
+</kw>
+<status status="PASS" endtime="20210408 21:09:00.712" starttime="20210408 21:08:49.772"></status>
+</kw>
+<kw name="Element Should Be Visible" library="ExtendedSelenium2Library">
+<doc>Verifies that the element identified by `locator` is visible.</doc>
+<arguments>
+<arg>${LOGOUT_BTN}</arg>
+<arg>Sign out</arg>
+</arguments>
+<msg timestamp="20210408 21:09:00.715" level="INFO">Verifying element 'css=.logout' is visible.</msg>
+<status status="PASS" endtime="20210408 21:09:00.852" starttime="20210408 21:09:00.714"></status>
+</kw>
+<doc>New user registration</doc>
 <tags>
-<tag>OrderPayment</tag>
+<tag>NewUser</tag>
 </tags>
-<status status="FAIL" endtime="20210408 11:47:13.712" critical="yes" starttime="20210408 11:47:13.712">Parent suite setup failed:
-Keyword 'order_payment.Open Browser' expected 0 arguments, got 2.</status>
+<status status="PASS" endtime="20210408 21:09:00.854" critical="yes" starttime="20210408 21:08:46.600"></status>
 </test>
 <kw type="teardown" name="Close Browser" library="ExtendedSelenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20210408 11:47:13.712" starttime="20210408 11:47:13.712"></status>
+<status status="PASS" endtime="20210408 21:09:03.226" starttime="20210408 21:09:00.863"></status>
 </kw>
-<status status="FAIL" endtime="20210408 11:47:13.712" starttime="20210408 11:47:13.427">Suite setup failed:
-Keyword 'order_payment.Open Browser' expected 0 arguments, got 2.</status>
+<status status="PASS" endtime="20210408 21:09:03.227" starttime="20210408 21:08:32.374"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">OrderPayment</stat>
+<stat fail="0" pass="1">NewUser</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Order Payment" pass="0">Order Payment</stat>
+<stat fail="0" id="s1" name="User Registration" pass="1">User Registration</stat>
 </suite>
 </statistics>
 <errors>
