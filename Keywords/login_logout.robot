@@ -29,7 +29,7 @@ Input email:
 Input password:
     [Documentation]             Input password
     [Arguments]                 ${PASSWORD}
-    input text                  ${IN_PASSWORD}   ${PASSWORD}
+    input password              ${IN_PASSWORD}   ${PASSWORD}
 
 Login:
     [Documentation]             Input password and username

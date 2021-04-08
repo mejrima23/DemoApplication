@@ -20,9 +20,6 @@ ${IN_CODE}                   id=postcode
 ${IN_PHONE}                  id=phone_mobile
 ${REGISTER_BTN}              id=submitAccount
 
-
-
-
 *** Keywords ***
 
 Open Browser to registration page

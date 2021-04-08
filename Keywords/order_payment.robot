@@ -24,12 +24,6 @@ ${CONFIRMAITON}           //span[text()="Order confirmation"]
 
 *** Keywords ***
 
-Open Browser
-    [Documentation]             Opens browser to login page
-    #[Arguments]                 ${BROWSER}
-    open browser    ${URL}      browser=${BROWSER}
-    maximize browser window
-
 Navigate to Search:
     [Arguments]             ${SEARCH}
     input text              ${IN_SEARCH}    ${SEARCH}
@@ -43,8 +37,11 @@ Order process:
     click element           ${PROCEED}
     wait until angular ready
     click element           ${CHECKOUT}
+    wait until angular ready
     click element           ${CHECKOUT}
+    wait until angular ready
     click element           ${STANDARD}
+    wait until angular ready
     input text              ${IN_EMAIL}    ${EMAIL}
     input password          ${IN_PASS}     ${PASSWORD}
     click element           ${SIGN_IN_BTN}
