@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20210408 11:47:13.427" generator="Robot 3.2.2 (Python 2.7.18 on win32)">
+<suite source="C:\Users\User\IdeaProjects\DemoApplication\Tests\order_payment.robot" id="s1" name="Order Payment">
+<kw type="setup" name="Open Browser" library="order_payment">
+<doc>Opens browser to login page</doc>
+<kw name="Open Browser" library="order_payment">
+<doc>Opens browser to login page</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210408 11:47:13.712" level="FAIL">Keyword 'order_payment.Open Browser' expected 0 arguments, got 2.</msg>
+<status status="FAIL" endtime="20210408 11:47:13.712" starttime="20210408 11:47:13.712"></status>
+</kw>
+<status status="FAIL" endtime="20210408 11:47:13.712" starttime="20210408 11:47:13.712"></status>
+</kw>
+<test id="s1-t1" name="Verify ordering and payment method">
+<doc>order</doc>
+<tags>
+<tag>OrderPayment</tag>
+</tags>
+<status status="FAIL" endtime="20210408 11:47:13.712" critical="yes" starttime="20210408 11:47:13.712">Parent suite setup failed:
+Keyword 'order_payment.Open Browser' expected 0 arguments, got 2.</status>
+</test>
+<kw type="teardown" name="Close Browser" library="ExtendedSelenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20210408 11:47:13.712" starttime="20210408 11:47:13.712"></status>
+</kw>
+<status status="FAIL" endtime="20210408 11:47:13.712" starttime="20210408 11:47:13.427">Suite setup failed:
+Keyword 'order_payment.Open Browser' expected 0 arguments, got 2.</status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">OrderPayment</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Order Payment" pass="0">Order Payment</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
